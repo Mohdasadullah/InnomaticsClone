@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innomatics Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .enquiry-bar {
+            background-color: #e63135;
+            padding: 10px;
+            text-align:left;
+        }
+        .enquiry-bar button {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 7px 10px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .logo img {
+            height: 50px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 35px;
+        }
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .pay-now {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .hero {
+            background-color: #f5f5f5;
+        }
+        
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                padding: 10px 0;
+                background: white;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            }
+            .nav-links.show {
+                display: flex;
+            }
+            .nav-links li {
+                text-align: center;
+                padding: 10px;
+            }
+        }
+        .image{
+            width: 100%;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.3;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        h1, h2 {
+            color: #333;
+        }
+       
+        .highlight {
+            font-weight: bold;
+            color:#e63135 ;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .left-section {
+            width: 45%;
+        }
+        .right-section {
+            width: 45%;
+        }
+        .table {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1em;
+        }
+        .table-row {
+            justify-content:center;
+            display: flex;
+            gap: 35px;
+        }
+        .table-cell {
+            width: 190px;
+            height: 130px;
+            padding: 40px;
+            border: 1px solid #ddd;
+            box-shadow: #292828;
+            justify-items: center;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+
+        .heading{
+            font-size:x-large;
+            color: #e63135  ;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container1{
+            display: flex;
+            gap: 50px;
+            padding: 20px;
+            height: 100vh;
+            background-color: black;
+            justify-content: center;
+            align-items: end;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            color: white;
+        }
+        .course {
+            width: 300px;
+            height: 70%;
+            background-color: black;
+            border: 1px solid #ddd;
+        }
+        .course h2 {
+            margin-top: 0;
+            text-align: center;
+            color: white;
+        }
+        .course img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .course button{
+            background-color: black;
+            color: white;
+            margin-top: 10px;
+            margin-left: 35%;
+            width: 100px;
+            height: 30px;
+        }
+        .footer {
+            font-family: Arial, sans-serif;
+            margin: 0 auto;
+            padding: 50px;
+            display: flex;
+            gap: 100px;
+            background-color: black;
+            color:white;
+        }
+        .left-section{
+            width: 40%;
+        }
+        .middle-section{
+            width: 20%;
+        }
+        .right-section{
+            width: 40%;
+        }
+
+        .header {
+            text-align: left;
+            letter-spacing: 3px;
+            margin-bottom: 30px;
+        }
+        .header img{
+            width: 100%;
+        }
+
+        h1, h2 {
+            margin: 5px 0;
+            font-weight: normal;
+        }
+
+        .description {
+            text-align: justify;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+
+        .courses-list, .contact-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .courses-list li, .contact-list li {
+            margin: 10px 0;
+
+        }
+
+        .contact-list strong {
+            display: block;
+            margin: 15px 0 0px;
+            font-size: 1.2rem;
+        }
+
+        .address {
+            margin-bottom: 8px;
+            font-weight:100;
+        }
+        .container2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            height: 70vh;
+            background-color: rgba(232, 232, 232, .33);
+        }
+        
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+            margin: 10px;
+            width: 250px;
+            text-align: center;
+        }
+        
+        .card img {
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .card-content {
+            padding: 10px;
+        }
+        
+        .card-content h3 {
+            margin-top: 0;
+        }
+        
+        .card-content p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="enquiry-bar">
+            <span style="color: white;"><b>Enquire Now:</b></span>
+            <button>Hyd: 1800 208 8744</button>
+            <button>Pune: 9951666671</button>
+            <button>Bengaluru: 9951666672</button>
+        </div>
+        <nav>
+            <div class="logo">
+                <img src="https://www.innomatics.in/wp-content/uploads/2023/01/Innomatics-Logo1.png" alt="Innomatics Logo">
+            </div>
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">IT Scholars Program</a></li>
+                <li><a href="#">Internship</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Events</a></li>
+            </ul>
+            <button class="pay-now">&#8377; Pay Now</button>
+        </nav>
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <img class="image" src="//innomatics.in/wp-content/uploads/2023/01/Artboard-1.jpg" alt="">
+            </div>
+        </section>
+    </main>
+    <div class="container">
+        <div class="left-section">
+            <div class="section">
+                <h1>We just don’t train,<br>We Transforms the careers</h1>
+                <p><span class="highlight">Informatics Research Labs</span> is a pioneer in “Transforming Careers and Lives” of individuals in the Digital Space by catering advanced training on <span class="highlight">NASSCOM Future skills prime Certified Data Science, Python, Predictive Analytics Modeler, Machine Learning, Artificial Intelligence (AI), Generative AI</span>, Full-stack web development and <span class="highlight">Career Launching program</span> for students who are willing to showcase their skills in the competitive job market with valuable credentials, and also can complete courses with a certificate.</p>
+            </div>
+
+            <div class="section">
+                <p class="heading"><b>NASSCOM Futureskills Prime Registered Business Partner</b></p>
+                <p>As an authorized <span class="highlight">NASSCOM Futureskills Prime Training Partner</span> dedicated to providing practical and real-world learning experiences. Our training includes case studies and business challenges to ensure job-ready skills. We also organize regular <span class="highlight">hackathons, workshops, and meetups</span> to enhance learning and productivity. With a dedicated placement team, we partner with over 100 <span class="highlight">companies</span> to match them with skilled professionals, helping businesses grow while shaping successful careers.</p>
+            </div>
+
+            <div class="section">
+                <p class="heading"><b>Best Edtech company</b></p>
+                <p>Recognized by <span class="highlight">Times of India</span> as the Best Training Institute in Hyderabad for Data Science & Digital Marketing, we have trained and placed <span class="highlight">10,000+</span> students. With <span class="highlight">350+</span> batches, <span class="highlight">70+</span> hackathons, <span class="highlight">500+</span> industry experts, <span class="highlight">500+</span> webinars, and 500+ hiring partners, we focus on practical learning and skill development through advanced classrooms and modern training methods.</p>
+            </div>
+            <div class="section">
+                <a href="#" class="button">View More</a>
+            </div>
+        </div>
+
+        <div class="right-section">
+            <div class="section">
+                <h1 style="text-align: center;">What we are?</h1>
+                <br><br>
+                <div class="table">
+                    <div class="table-row">
+                        <div class="table-cell">
+                            <span class="et_pb_image_wrap">
+                            <span class="et_pb_animation_top et_pb_animation_top_tablet et_pb_animation_top_phone et-pb-icon et-animated"></span>
+                            </span>
+                            Global Leaders in training</div>
+                        <div class="table-cell">Practical oriented approach</div>
+                    </div>
+                    <br><br>
+                    <div class="table-row">
+                        <div class="table-cell">Hands-on projects & internship</div>
+                        <div class="table-cell">100% Placement Assistance</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container1">
+        <div class="course">
+            <img src="https://www.innomatics.in/wp-content/uploads/2023/01/No-1-best-data-science-course-training-institute-in-hyderabad.jpg" alt="Data Science">
+            <h2>NASSCOM Futureskills Prime Certified Data Science</h2>
+            <p style="text-align: center;">This is a great choice for tech geeks, students, working professionals and aspiring data scientists who want to upskill and build a better foundation in the stream of Data Science.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="course">
+            <img src="https://www.innomatics.in/wp-content/uploads/2025/01/FULL-STACK-WEB.jpg" alt="Full Stack Development">
+            <h2>Full Stack Development</h2>
+            <p style="text-align: center;">Learn the right skills to break into a development career & advance yourself as a full-stack Developer. It includes Frontend, Backend, databases, debugging & testing.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="course">
+            <img src="https://www.innomatics.in/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-17-at-11.49.18.jpeg" alt="Generative AI">
+            <h2>Generative AI</h2>
+            <p style="text-align: center;">Generative AI Course at Informatics is perfect for students, job seekers, entrepreneurs, and professionals who want to learn the latest AI tools and skills to grow in their careers.</p>
+            <button>Read More</button>
+        </div>
+    </div>
+    <div class="container2">
+        <div class="card">
+            <img src="https://www.innomatics.in/wp-content/uploads/2024/11/Aaesha_Azeemuddin-400x516.jpg" alt="Success Story 1">
+        </div>
+        <div class="card">
+            <img src="https://www.innomatics.in/wp-content/uploads/2024/11/G._Venkata_Mareswararao-400x516.jpg" alt="Success Story 1">
+           
+        </div>
+        <div class="card">
+            <img src="https://www.innomatics.in/wp-content/uploads/2024/11/Alladi_Ranjith-400x516.jpg" alt="Success Story 1">
+            
+        </div>
+        <div class="card">
+            <img src="https://www.innomatics.in/wp-content/uploads/2024/11/Cherukupalli_Indhu-400x516.jpg" alt="Success Story 1">
+            
+        </div>
+    </div>
+    <div class="footer">
+        <!-- Left Section -->
+        <div class="left-section">
+            <div class="header">
+                <img src="https://www.innomatics.in/wp-content/uploads/2023/01/Innomatics-Logo1.png" alt="">
+            </div>
+    
+            <p class="description">
+                A leading training institute, <strong>Innomatics Research Labs</strong> offers courses in areas such as NASSCOM Futureskills Prime Certified <strong>Data Science</strong>, Python, AI, Data Analytics, <strong>Full Stack Development</strong>, and Generative AI. Our practical training is designed meticulously to meet industry needs and provide valuable certification upon completion, empowering individuals to excel in their careers.
+            </p>
+        </div>
+    
+        <!-- Middle Section -->
+        <div class="middle-section">
+            <h3>Courses</h3>
+            <ul class="courses-list">
+                <li>Data Science</li>
+                <li>Online Data Science</li>
+                <li>Advanced Generative AI</li>
+                <li>Full Stack Web Developer</li>
+                <li>Digital Marketing</li>
+                <li>Placements</li>
+                <li>Partner with us</li>
+                <li>Privacy Policy</li>
+            </ul>
+        </div>
+    
+        <!-- Right Section -->
+        <div class="right-section">
+            <h3>Contact Us:</h3>
+            <ul class="contact-list">
+                <li>
+                    <strong>Kukatpaily — Hyderabad</strong>
+                    <div class="address">4205, 2nd Floor, Fortune Signature, Near JNTU Metro Station, Kukatpaily, Hyderabad, Telangana 500085</div>
+                    Call us : +91-1800 4123 3644
+                </li>
+                
+                <li>
+                    <strong>Pune</strong>
+                    <div class="address">2nd Floor, Sal Sayaji Apartment, 201 Paul Rd, beside VANAZ Metro, above Bata showroom, Ramkrishna Paramians Nagar, Kothrud, Pune, Maharashtra 411038</div>
+                    Call us : +91-9951666671
+                </li>
+    
+                <li>
+                    <strong>Bengaluru</strong>
+                    <div class="address">NO.576/B, 3rd FLOOR, Swetha Arcade, Service Road, 100 FT ROAD, 6TH SECTOR, Her Layout, Bengaluru, Karnataka 560068</div>
+                    +91-9951666672
+                </li>
+    
+                <li>
+                    <strong>Phone/Whatsapp:</strong>
+                    +91-1800 4123 3644 / +91-9951666671<br>
+                    +91-9951666672
+                </li>
+    
+                <li>
+                    <strong>Email Us:</strong>
+                    Admissions@innomatics.in
+                </li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

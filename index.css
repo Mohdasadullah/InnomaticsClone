@@ -1,0 +1,67 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:sans-serif;
+}
+.enquiry{
+    background-color: #e63135;
+    height: 6vh;
+    width: 100%;
+    padding-left: 50px;
+    align-items: center;
+    display: flex;
+    gap: 40px;
+    color: white;
+}
+.enquiry button{
+    background-color: black;
+    color: white;
+    width: 160px;
+    height: 35px;
+    border-radius: 10px;
+    font-size:medium;
+}
+#Bengaluru{
+    width: 190px;
+}
+nav{
+    width: 100vw;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 65px;
+}
+#logo{
+    height: 90%;
+    
+}
+.left{
+    margin-right: 0px;
+}.right ul {
+    display: flex;
+    gap: 20px;
+    font-weight: bold;
+}
+
+ul li {
+    list-style: none;
+    padding: 0px 10px;
+}
+.paynow{
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    font-size: large;
+    
+}
+header{
+    position: fixed;
+}
+.main{
+    position:absolute;
+    margin: 500px;
+}
